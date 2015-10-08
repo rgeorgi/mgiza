@@ -53,6 +53,10 @@ char *Get_File_Spec ()
   user = getenv("USER");
 #endif
 
+if (!user) {
+   user = "nobody";
+}
+
   file_spec = (char *)malloc(sizeof(char) *
                              (strlen(time_stmp) + strlen(user) + 1));
   file_spec[0] = '\0';
